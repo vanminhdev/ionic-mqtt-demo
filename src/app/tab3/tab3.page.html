@@ -1,9 +1,43 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      Độ ẩm hiện tại
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <div>
+        <radial-gauge 
+          width="350" 
+          height="350" 
+          units="%" 
+          min-value="0" 
+          max-value="100" 
+
+          value-box="true" 
+          major-ticks="0,10,20,30,40,50,60,70,80,90,100" 
+          minor-ticks="10"
+          stroke-ticks="true" 
+          highlights='[
+              {"from": 70, "to": 100, "color": "rgba(200, 50, 50, .75)"}
+          ]' 
+          color-plate="#fff" 
+          border-shadow-width="0" 
+          borders="false" 
+          needle-type="arrow" 
+          needle-width="2"
+          needle-circle-size="7" 
+          needle-circle-outer="true" 
+          needle-circle-inner="false" 
+          animation-duration="1500"
+          animation-rule="linear" 
+          value={{doam}}>
+        </radial-gauge>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

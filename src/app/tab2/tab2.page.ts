@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MQTTService } from 'ionic-mqtt';
 
 @Component({
@@ -8,8 +8,9 @@ import { MQTTService } from 'ionic-mqtt';
 })
 
 export class Tab2Page {
-
   private _mqttClient: any;
+  private nhietdo: any;
+
 
   private MQTT_CONFIG: {
     host: string,
@@ -21,51 +22,24 @@ export class Tab2Page {
     clientId: "clientId-LtNoLonsYY",
   };
 
-  private TOPIC: string[] = ["topictest"];
+  private TOPIC: string[] = ["topictestnhietdo"];
 
   constructor(private _mqttService: MQTTService) {
+
   }
 
   ngOnInit() {
-    this._mqttClient = this._mqttService.loadingMqtt(this._onConnectionLost, this._onMessageArrived, this.TOPIC, this.MQTT_CONFIG);
+    this._mqttClient = this._mqttService.loadingMqtt(this._onConnectionLost, (message)=>{this.nhietdo = message.payloadString}, this.TOPIC, this.MQTT_CONFIG);
   }
 
   private _onConnectionLost(responseObject) {
-    // connection listener
-    // ...do actions when connection lost
-    console.log('_onConnectionLost ', responseObject);
-  }
-
-  private _onMessageArrived(message) {
-    // message listener
-    // ...do actions with arriving message
-    console.log('message arrived ', message.payloadString);
-  }
-
-  // public function for sending and publishing mqtt messages
-
-  public sendMessage() {
-    console.log('sendMessage')
-    this._mqttService.sendMessage("topictest", "loi nhan");
+    console.log('_onConnectionLost nhiet do ', responseObject);
   }
 
   public publishMessage() {
-    console.log('publishMessage')
-    this._mqttService.publishMessage("toppictest", "loi nhan");
+    console.log('publishMessage nhiet do')
+    this._mqttService.publishMessage(this.TOPIC[0], "21");
   }
 
-
-  private messageArrived: string;
-
-  //
-  getData() {
-
-    // alert('load data');
-    console.log('chay function get data');
-    
-    this.sendMessage();
-
-
-
-  }
+  
 }

@@ -4,13 +4,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { IonicMqttModule, MQTTService } from 'ionic-mqtt';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: Tab1Page }])
+    RouterModule.forChild([{ path: '', component: Tab1Page }]),
+    HighchartsChartModule,
+    IonicMqttModule
+  ],
+  providers: [
+    MQTTService
   ],
   declarations: [Tab1Page]
 })

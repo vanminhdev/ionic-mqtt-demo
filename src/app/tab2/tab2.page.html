@@ -1,18 +1,32 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Connect Hive-mqtt
+      Nhiệt độ hiện tại
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- <ion-searchbar placeholder="Bạn tìm kiếm gì"></ion-searchbar> -->
-  
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <div>
+        <linear-gauge
+          width="150" height="400" units="°C" title="Nhiệt độ" min-value="0" max-value="50"
+          major-ticks="[0,10,20,30,40,50]" minor-ticks="10" stroke-ticks="true" ticks-width="15" ticks-width-minor="7.5"
+          highlights='[ {"from": 0, "to": 10, "color": "rgba(0, 0, 255, .3)"},
+          {"from": 10, "to": 30, "color": "rgba(255, 211, 3, 0.7)"},  
+          {"from": 30, "to": 50, "color": "rgba(255, 0, 0, 0.7)"}]' 
+          color-major-ticks="#ffffff" color-minor-ticks="#ffffff"
+          color-title="#eee" color-units="#ccc" color-numbers="#eee" color-plate="#2465c0" color-plate-end="#327ac0"
+          border-shadow-width="10" borders="false" border-radius="20" needle-type="arrow" needle-width="3"
+          animation-duration="250" animation-rule="linear" animated-value="true" color-needle="#111" color-needle-end=""
+          color-bar-progress="#327ac0" color-bar="#f5f5f5" bar-stroke="0" bar-width="10" bar-begin-circle="false"
+          [attr.value]="myValueProperty" data-value={{nhietdo}}>
+        </linear-gauge>
+      </div>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      
+    </ion-row>
+  </ion-grid>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-button expand="block" (click)="getData()">Load Data</ion-button>
-  </ion-toolbar>
-</ion-footer>

@@ -1,9 +1,9 @@
-import { IonicModule, NavController } from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab2Page } from './tab2.page';
+import { Tab4Page } from './tab4.page';
 import { IonicMqttModule, MQTTService } from 'ionic-mqtt';
 import {GaugesModule} from 'ng-canvas-gauges';
 
@@ -12,17 +12,13 @@ import {GaugesModule} from 'ng-canvas-gauges';
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: Tab2Page }]),
+    RouterModule.forChild([{ path: '', component: Tab4Page }]),
     IonicMqttModule,
     GaugesModule
   ],
   providers: [
     MQTTService
   ],
-  declarations: [Tab2Page]
+  declarations: [Tab4Page]
 })
-
-
-export class Tab2PageModule {
-
-}
+export class Tab4PageModule {}
