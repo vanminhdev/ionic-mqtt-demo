@@ -26,7 +26,7 @@ export class Tab1Page {
       text: 'Biểu đồ nhiệt'
     },
     xAxis: {
-      categories: ['1', '2', '3', '4', '5', '6']
+      categories: ['10','9','8','7','6','5','4','3','2','1']
     },
     yAxis: {
       title: {
@@ -53,7 +53,7 @@ export class Tab1Page {
       text: 'Biểu đồ độ ẩm'
     },
     xAxis: {
-      categories: ['1', '2', '3', '4', '5', '6']
+      categories: ['10','9','8','7','6','5','4','3','2','1']
     },
     yAxis: {
       title: {
@@ -95,7 +95,7 @@ export class Tab1Page {
   private getData(message){
     //console.log(message);
     if(message.destinationName == this.TOPIC[0]) {
-      if(this.arrNhietDo.length == 6) {
+      if(this.arrNhietDo.length == 10) {
         this.arrNhietDo.splice(0,1);
       }
       this.arrNhietDo.push(+message.payloadString);
@@ -107,7 +107,7 @@ export class Tab1Page {
         });
     }
     if (message.destinationName == this.TOPIC[1]) {
-      if(this.arrDoAm.length == 6) {
+      if(this.arrDoAm.length == 10) {
         this.arrDoAm.splice(0,1);
       }
       this.arrDoAm.push(+message.payloadString);

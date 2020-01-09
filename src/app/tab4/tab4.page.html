@@ -7,14 +7,12 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row class="ion-justify-content-center">
-      <ion-toolbar>
-        <ion-button expand="block" color="primary" (click)="onClickTurnOnLed()">
-          {{btn_turn_on}}
-        </ion-button>
-    </ion-toolbar>
-    </ion-row>
-  </ion-grid>
+  <ion-list>
+    <ion-item>
+        <ion-label>{{btn_turn_on}}</ion-label>
+        <ion-toggle ion-toggle-text (ionChange)="onClickTurnOnLed()">
+        </ion-toggle>
+    </ion-item>
+  </ion-list>
 </ion-content>
 
