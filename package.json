@@ -28,7 +28,7 @@
     "canvas-gauges": "^2.1.5-radial",
     "cordova-plugin-firebase": "^2.0.5",
     "core-js": "^2.5.4",
-    "highcharts": "^8.1.1",
+    "highcharts": "^9.0.0",
     "highcharts-angular": "^2.4.0",
     "ionic-mqtt": "^1.1.5",
     "mqtt": "^3.0.0",
